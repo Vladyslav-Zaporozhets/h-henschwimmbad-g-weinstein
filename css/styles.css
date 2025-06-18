@@ -1,0 +1,87 @@
+body {
+  font-family: "Roboto", sans-serif;
+  color: #333333;
+  line-height: 1.5;
+  background-color: #ffffff;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  color: #2e2e2e;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+a {
+  color: #3683ae;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #29a6a1;
+  text-decoration: underline;
+}
+
+/* Resets */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ?---------- Mobile ---------- */
+.container {
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ?---------- Teblet ---------- */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* ?---------- Desktop ---------- */
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
