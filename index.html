@@ -28,22 +28,22 @@
   <body>
     <header class="header">
       <div class="container header-container">
+        <a class="header-logo" href="index.html"
+          ><img
+            class="header-logo-img"
+            srcset="
+              ./images/höhenschwimmbad-logo@1x-min.png 1x,
+              ./images/höhenschwimmbad-logo@2x-min.png 2x
+            "
+            src="./images/höhenschwimmbad-logo@1x-min.png"
+            alt="Logo Höhenschwimmbad"
+            width="200"
+            height="100"
+        /></a>
         <nav class="header-navigation">
-          <a class="header-logo" href="index.html"
-            ><img
-              class="header-logo-img"
-              srcset="
-                ./images/höhenschwimmbad-logo@1x-min.png 1x,
-                ./images/höhenschwimmbad-logo@2x-min.png 2x
-              "
-              src="./images/höhenschwimmbad-logo@1x-min.png"
-              alt="Logo Höhenschwimmbad"
-              width="200"
-              height="100"
-          /></a>
           <ul class="header-nav-list">
             <li class="header-nav-item">
-              <a href="#about" class="header-nav-link">Über uns</a>
+              <a href="#about" class="header-nav-link current">Über uns</a>
             </li>
             <li class="header-nav-item">
               <a href="#hours-info" class="header-nav-link">Öffnungszeiten</a>
@@ -55,12 +55,95 @@
               <a href="#contact" class="header-nav-link">Kontakt</a>
             </li>
             <li class="header-nav-item">
-              <a href="#faq" class="header-nav-link">Kontakt</a>
+              <a href="#faq" class="header-nav-link">FAQ</a>
             </li>
           </ul>
         </nav>
-        <address></address>
+        <ul class="social-list header-social-list">
+          <li class="social-list-item header-social-list-item">
+            <a href="" class="social-link header-social-link"
+              ><svg class="social-link-ico" width="24" height="24">
+                <use href="./images/symbol-defs.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="solial-list-item header-social-list-iem">
+            <a href="" class="social-link header-social-link"
+              ><svg class="social-link-ico" width="24" height="24">
+                <use href="./images/symbol-defs.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="solial-list-item header-social-list-iem">
+            <a href="" class="social-link header-social-link"
+              ><svg class="social-link-ico" width="24" height="24">
+                <use href="./images/symbol-defs.svg#icon-twitter"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <button
+          type="button"
+          class="mobile-menu-btm"
+          aria-controls="mobile-menu"
+          data-menu-open
+        >
+          <svg class="mobile-menu-btm-ico" width="35" height="35">
+            <use href="./images/symbol-defs.svg#icon-menu-burger"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-menu" data-menu>
+        <div class="container mobile-menu-container">
+          <button class="mob-close-btm" type="button" data-menu-close>
+            <svg class="mob-close-btm-ico" width="10" height="10">
+              <use href="./images/symbol-defs.svg#icon-close-black"></use>
+            </svg>
+          </button>
+          <nav class="mob-nav">
+            <ul class="mob-nav-list">
+              <li class="mob-nav-item">
+                <a href="#about" class="mob-nav-link">Über uns</a>
+              </li>
+              <li class="mob-nav-item">
+                <a href="#hours-info" class="mob-nav-link">Öffnungszeiten</a>
+              </li>
+              <li class="mob-nav-item">
+                <a href="#gallery" class="mob-nav-link">Galerie</a>
+              </li>
+              <li class="mob-nav-item">
+                <a href="#contact" class="mob-nav-link">Kontakt</a>
+              </li>
+              <li class="mob-nav-item">
+                <a href="#faq" class="mob-nav-link">FAQ</a>
+              </li>
+            </ul>
+          </nav>
+          <address class="mob-menu-contact">
+            <ul class="mob-contact-list">
+              <li class="mob-contact-item">
+                <a href="mailto:info@schwimmbad.com" class="mob-contact-link"
+                  >info@schwimmbad.com</a
+                >
+              </li>
+              <li class="mob-contact-item">
+                <a href="tel:+49092429800" class="mob-contact-link"
+                  >+49092429800</a
+                >
+              </li>
+            </ul>
+          </address>
+        </div>
       </div>
     </header>
+    <main>
+      <section class="section-hero">
+        <div class="container container-hero">
+          <h1 class="hero-title">Ihre Sommeroase mit Panoramablick</h1>
+        </div>
+      </section>
+    </main>
+    <script src="./js/menu.js"></script>
+    <script src="./js/active-nav.js"></script>
   </body>
 </html>
