@@ -4,10 +4,11 @@
   const lightbox = document.querySelector("[data-lightbox]");
   if (!lightbox) return; // Якщо лайтбоксу немає, нічого не робимо
 
+  // Змінюємо document.querySelector на lightbox.querySelector
   const lightboxImage = lightbox.querySelector(".lightbox-image");
-  const closeButton = document.querySelector("[data-lightbox-close]");
-  const prevButton = document.querySelector("[data-lightbox-prev]");
-  const nextButton = document.querySelector("[data-lightbox-next]");
+  const closeButton = lightbox.querySelector("[data-lightbox-close]"); // <-- ЗМІНЕНО
+  const prevButton = lightbox.querySelector("[data-lightbox-prev]"); // <-- ЗМІНЕНО
+  const nextButton = lightbox.querySelector("[data-lightbox-next]"); // <-- ЗМІНЕНО
   const galleryImages = document.querySelectorAll(".gallery-item img");
 
   // --- Створюємо масив з усіма посиланнями на зображення ---
