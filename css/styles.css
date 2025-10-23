@@ -12,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Merriweather", serif; /* ОНОВЛЕНО: Шрифт для заголовків */
   color: #2e2e2e;
   margin-top: 0;
   margin-bottom: 0.5em;
@@ -108,7 +108,7 @@ img {
 }
 
 .header-logo-img {
-  height: 60px; /* Виправлено з max-height */
+  height: 100px; /* Виправлено з max-height */
   width: auto;
 }
 
@@ -282,11 +282,20 @@ img {
   gap: 16px;
 }
 
+.gallery-item {
+  transition: transform 0.3s ease; /* ДОДАНО: Анімація */
+}
+
+.gallery-item:hover {
+  transform: scale(1.03); /* ДОДАНО: Анімація */
+}
+
 .gallery-item img {
   width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer; /* ДОДАНО: Курсор для лайтбоксу */
 }
 
 /* Contact */
@@ -378,6 +387,11 @@ img {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease; /* ДОДАНО: Анімація */
+}
+
+.faq-item:hover {
+  transform: scale(1.02); /* ДОДАНО: Анімація */
 }
 
 .faq-question {
@@ -412,7 +426,7 @@ img {
   }
 
   .header-logo-img {
-    height: 70px; /* Виправлено з max-height */
+    height: 130px; /* Виправлено з max-height */
   }
 
   .header-navigation {
@@ -567,4 +581,114 @@ img {
   .gallery-grid {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+
+/* ===== LIGHTBOX STYLES ===== */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox-image {
+  display: block;
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 40px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+/* ===== END LIGHTBOX STYLES ===== */
+
+/* ===== STATUS BANNER STYLES ===== */
+.status-banner {
+  max-width: 500px;
+  margin: 0 auto 30px auto;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.status-banner.is-open {
+  background-color: #e6f7e6;
+  color: #3d8b3d;
+  border: 1px solid #c3e6c3;
+}
+
+.status-banner.is-closed {
+  background-color: #f7e6e6;
+  color: #8b3d3d;
+  border: 1px solid #e6c3c3;
+}
+
+.status-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.status-banner.is-open .status-icon::before {
+  content: "🟢";
+}
+
+.status-banner.is-closed .status-icon::before {
+  content: "🔴";
+}
+
+/* ===== GOOGLE MAP STYLES ===== */
+.google-map-container {
+  margin-top: 30px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.google-map {
+  width: 100%;
+  height: 350px;
+  border: none;
+}
+
+/* ===== WEATHER WIDGET STYLES ===== */
+.weather-widget-container {
+  max-width: 500px;
+  margin: 30px auto 0 auto;
 }

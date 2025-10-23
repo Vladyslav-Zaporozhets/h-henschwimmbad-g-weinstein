@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/styles.css" />
@@ -26,7 +26,6 @@
     <meta name="robots" content="index, follow" />
   </head>
   <body>
-    <!-- Вбудований SVG sprite -->
     <svg
       aria-hidden="true"
       style="position: absolute; width: 0; height: 0; overflow: hidden"
@@ -68,8 +67,6 @@
         </symbol>
       </defs>
     </svg>
-
-    <!-- <include src="./images/symbol-defs.svg"></include>  Я видалив цей рядок, оскільки він не є стандартним HTML -->
 
     <header class="header">
       <div class="container header-container">
@@ -113,12 +110,11 @@
               aria-label="Facebook"
               class="social-link header-social-link"
               ><svg class="social-link-ico" width="24" height="24">
-                <!-- Шлях виправлено: -->
                 <use href="#icon-facebook"></use>
               </svg>
             </a>
           </li>
-          <li class="solial-list-item header-social-list-iem">
+          <li class="social-list-item header-social-list-item">
             <a
               href="https://www.instagram.com/"
               target="_blank"
@@ -126,12 +122,11 @@
               aria-label="Instagram"
               class="social-link header-social-link"
               ><svg class="social-link-ico" width="24" height="24">
-                <!-- Шлях виправлено: -->
                 <use href="#icon-instagram"></use>
               </svg>
             </a>
           </li>
-          <li class="solial-list-item header-social-list-iem">
+          <li class="social-list-item header-social-list-item">
             <a
               href="https://twitter.com/"
               target="_blank"
@@ -139,7 +134,6 @@
               aria-label="Twitter"
               class="social-link header-social-link"
               ><svg class="social-link-ico" width="24" height="24">
-                <!-- Шлях виправлено: -->
                 <use href="#icon-twitter"></use>
               </svg>
             </a>
@@ -153,7 +147,6 @@
           data-menu-open
         >
           <svg class="mobile-menu-btm-ico" width="35" height="35">
-            <!-- Шлях виправлено: -->
             <use href="#icon-menu-burger"></use>
           </svg>
         </button>
@@ -162,7 +155,6 @@
         <div class="container mobile-menu-container">
           <button class="mob-close-btm" type="button" data-menu-close>
             <svg class="mob-close-btm-ico" width="10" height="10">
-              <!-- Цей шлях був правильний: -->
               <use href="#icon-close-black"></use>
             </svg>
           </button>
@@ -217,7 +209,6 @@
         </div>
       </section>
 
-      <!-- Section Über uns -->
       <section id="about" class="section">
         <div class="container">
           <h2 class="section-title">Über uns</h2>
@@ -236,10 +227,14 @@
         </div>
       </section>
 
-      <!-- Section Öffnungszeiten -->
       <section id="hours-info" class="section section-gray">
         <div class="container">
           <h2 class="section-title">Öffnungszeiten & Infos</h2>
+
+          <div id="status-banner" class="status-banner">
+            <span class="status-icon"></span>
+            <span id="status-text" class="status-text">Завантаження...</span>
+          </div>
           <ul class="info-list">
             <li class="info-item">
               <strong>Saison:</strong> Juni bis September
@@ -249,17 +244,41 @@
             </li>
             <li class="info-item"><strong>Eintritt:</strong> Kostenlos</li>
             <li class="info-item">
-              <strong>Aufsicht:</strong> Baden auf eigene Gefahr (keine
+              <strong>Aufsicht:</strong> Baden auf eigene Gefahr (кеіпе
               Badeaufsicht)
             </li>
             <li class="info-item">
               <strong>Wasser:</strong> Biologische Aufbereitung, chlorfrei
             </li>
           </ul>
+          <div class="weather-widget-container">
+            <a
+              class="weatherwidget-io"
+              href="https://forecast7.com/de/49d7711d33/gossweinstein/"
+              data-label="Gößweinstein"
+              data-theme="pure"
+              data-basecolor="#f8f8f8"
+              data-textcolor="#333333"
+              data-highcolor="#3683ae"
+              data-lowcolor="#29a6a1"
+              >Gößweinstein</a
+            >
+          </div>
+          <script>
+            !(function (d, s, id) {
+              var js,
+                fjs = d.getElementsByTagName(s)[0];
+              if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://weatherwidget.io/js/widget.min.js";
+                fjs.parentNode.insertBefore(js, fjs);
+              }
+            })(document, "script", "weatherwidget-io-js");
+          </script>
         </div>
       </section>
 
-      <!-- Section Galerie -->
       <section id="gallery" class="section">
         <div class="container">
           <h2 class="section-title">Galerie</h2>
@@ -292,7 +311,6 @@
         </div>
       </section>
 
-      <!-- Section Kontakt -->
       <section id="contact" class="section section-gray">
         <div class="container contact-container">
           <div class="contact-info">
@@ -313,6 +331,18 @@
                 </li>
               </ul>
             </address>
+            <div class="google-map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2586.602511418728!2d11.33230481570044!3d49.77111007938768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a1f52d0a3120b7%3A0x1e6a623f99166fcf!2zSMO2aGVuc2Nod2ltbWJhZCBHw7bDn3dlbnN0ZWlu!5e0!3m2!1sde!2sde!4v1678888888888!5m2!1sde!2sde"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="google-map"
+              ></iframe>
+            </div>
           </div>
           <div class="contact-form-wrapper">
             <h3 class="form-title">Schreiben Sie uns</h3>
@@ -340,7 +370,6 @@
         </div>
       </section>
 
-      <!-- Section FAQ -->
       <section id="faq" class="section">
         <div class="container">
           <h2 class="section-title">FAQ - Häufige Fragen</h2>
@@ -379,7 +408,15 @@
         </p>
       </div>
     </footer>
-    <!-- Скрипт для SVG (для старих браузерів) -->
+
+    <div class="lightbox" data-lightbox>
+      <button type="button" class="lightbox-close" data-lightbox-close>
+        &times;
+      </button>
+      <div class="lightbox-content">
+        <img src="" alt="Große Ansicht" class="lightbox-image" />
+      </div>
+    </div>
     <script>
       (function (d, s) {
         d.createElement(s);
@@ -390,12 +427,84 @@
         e.parentNode.insertBefore(n, e);
       })(document, "script");
     </script>
-    <!-- Скрипт для року у футері -->
     <script>
       document.getElementById("current-year").textContent =
         new Date().getFullYear();
     </script>
     <script src="./js/menu.js"></script>
     <script src="./js/active-nav.js"></script>
+
+    <script>
+      (() => {
+        // Отримуємо елементи лайтбоксу
+        const lightbox = document.querySelector("[data-lightbox]");
+        const lightboxImage = lightbox.querySelector(".lightbox-image");
+        const closeButton = document.querySelector("[data-lightbox-close]");
+
+        // Отримуємо всі зображення галереї
+        const galleryImages = document.querySelectorAll(".gallery-item img");
+
+        // Функція відкриття лайтбоксу
+        function openLightbox(event) {
+          const imgSrc = event.currentTarget.src;
+          lightboxImage.src = imgSrc;
+          lightbox.classList.add("is-open");
+          document.body.style.overflow = "hidden"; // Блокуємо скрол сторінки
+        }
+
+        // Функція закриття лайтбоксу
+        function closeLightbox() {
+          lightbox.classList.remove("is-open");
+          lightboxImage.src = ""; // Очищуємо src, щоб зупинити завантаження
+          document.body.style.overflow = "auto"; // Повертаємо скрол
+        }
+
+        // Додаємо обробники подій
+        galleryImages.forEach((img) => {
+          img.addEventListener("click", openLightbox);
+        });
+
+        closeButton.addEventListener("click", closeLightbox);
+
+        // Закриття по кліку на оверлей (фон)
+        lightbox.addEventListener("click", (event) => {
+          if (event.currentTarget === event.target) {
+            closeLightbox();
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      (() => {
+        const banner = document.getElementById("status-banner");
+        const statusText = document.getElementById("status-text");
+
+        const now = new Date();
+        const currentMonth = now.getMonth(); // 0 = січень, 11 = грудень
+        const currentHour = now.getHours(); // 0 - 23
+
+        // Сезон: з червня (5) по вересень (8)
+        const isSeason = currentMonth >= 5 && currentMonth <= 8;
+        // Години роботи: з 09:00 до 20:00 (не включно)
+        const isTime = currentHour >= 9 && currentHour < 20;
+
+        if (isSeason && isTime) {
+          banner.classList.add("is-open");
+          statusText.textContent = "Wir haben geöffnet!";
+        } else {
+          banner.classList.add("is-closed");
+          let reason = "";
+          if (!isSeason) {
+            reason = "Derzeit ist keine Saison (wir arbeiten von Juni bis September).";
+          } else {
+            reason = "Unsere Öffnungszeiten: 09:00 – 20:00 Uhr.";
+          }
+          statusText.textContent = `Wir haben geschlossen. ${reason}`;
+        }
+      })();
+    </script>
+    </body>
+</html>
   </body>
 </html>
