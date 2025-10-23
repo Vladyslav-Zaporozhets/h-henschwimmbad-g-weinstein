@@ -113,7 +113,7 @@
         <div class="container mobile-menu-container">
           <button class="mob-close-btm" type="button" data-menu-close>
             <svg class="mob-close-btm-ico" width="10" height="10">
-              <use href="#icon-close-black"></use>
+              <use href="./images/symbol-defs.svg#icon-close-black"></use>
             </svg>
           </button>
           <nav class="mob-nav">
@@ -222,18 +222,6 @@
               >Gößweinstein</a
             >
           </div>
-          <script>
-            !(function (d, s, id) {
-              var js,
-                fjs = d.getElementsByTagName(s)[0];
-              if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "https://weatherwidget.io/js/widget.min.js";
-                fjs.parentNode.insertBefore(js, fjs);
-              }
-            })(document, "script", "weatherwidget-io-js");
-          </script>
         </div>
       </section>
 
@@ -375,93 +363,17 @@
         <img src="" alt="Große Ansicht" class="lightbox-image" />
       </div>
     </div>
-    <script>
-      (function (d, s) {
-        d.createElement(s);
-        var e = d.getElementsByTagName(s)[0];
-        var n = d.createElement(s);
-        n.async = true;
-        n.src = "https://cdn.jsdelivr.net/npm/svgxuse@1.2.6/svgxuse.min.js";
-        e.parentNode.insertBefore(n, e);
-      })(document, "script");
-    </script>
-    <script>
-      document.getElementById("current-year").textContent =
-        new Date().getFullYear();
-    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/svgxuse@1.2.6/svgxuse.min.js"
+      async
+    ></script>
+
     <script src="./js/menu.js"></script>
     <script src="./js/active-nav.js"></script>
-
-    <script>
-      (() => {
-        // Отримуємо елементи лайтбоксу
-        const lightbox = document.querySelector("[data-lightbox]");
-        const lightboxImage = lightbox.querySelector(".lightbox-image");
-        const closeButton = document.querySelector("[data-lightbox-close]");
-
-        // Отримуємо всі зображення галереї
-        const galleryImages = document.querySelectorAll(".gallery-item img");
-
-        // Функція відкриття лайтбоксу
-        function openLightbox(event) {
-          const imgSrc = event.currentTarget.src;
-          lightboxImage.src = imgSrc;
-          lightbox.classList.add("is-open");
-          document.body.style.overflow = "hidden"; // Блокуємо скрол сторінки
-        }
-
-        // Функція закриття лайтбоксу
-        function closeLightbox() {
-          lightbox.classList.remove("is-open");
-          lightboxImage.src = ""; // Очищуємо src, щоб зупинити завантаження
-          document.body.style.overflow = "auto"; // Повертаємо скрол
-        }
-
-        // Додаємо обробники подій
-        galleryImages.forEach((img) => {
-          img.addEventListener("click", openLightbox);
-        });
-
-        closeButton.addEventListener("click", closeLightbox);
-
-        // Закриття по кліку на оверлей (фон)
-        lightbox.addEventListener("click", (event) => {
-          if (event.currentTarget === event.target) {
-            closeLightbox();
-          }
-        });
-      })();
-    </script>
-
-    <script>
-      (() => {
-        const banner = document.getElementById("status-banner");
-        const statusText = document.getElementById("status-text");
-
-        const now = new Date();
-        const currentMonth = now.getMonth(); // 0 = січень, 11 = грудень
-        const currentHour = now.getHours(); // 0 - 23
-
-        // Сезон: з червня (5) по вересень (8)
-        const isSeason = currentMonth >= 5 && currentMonth <= 8;
-        // Години роботи: з 09:00 до 20:00 (не включно)
-        const isTime = currentHour >= 9 && currentHour < 20;
-
-        if (isSeason && isTime) {
-          banner.classList.add("is-open");
-          statusText.textContent = "Wir haben geöffnet!";
-        } else {
-          banner.classList.add("is-closed");
-          let reason = "";
-          if (!isSeason) {
-            reason =
-              "Derzeit ist keine Saison (wir arbeiten von Juni bis September).";
-          } else {
-            reason = "Unsere Öffnungszeiten: 09:00 – 20:00 Uhr.";
-          }
-          statusText.textContent = `Wir haben geschlossen. ${reason}`;
-        }
-      })();
-    </script>
+    <script src="./js/current-year.js"></script>
+    <script src="./js/lightbox.js"></script>
+    <script src="./js/status-banner.js"></script>
+    <script src="./js/weather-widget.js"></script>
   </body>
 </html>
