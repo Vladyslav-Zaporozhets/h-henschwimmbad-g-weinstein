@@ -108,7 +108,7 @@ img {
 }
 
 .header-logo-img {
-  max-height: 70px;
+  height: 60px; /* Виправлено з max-height */
   width: auto;
 }
 
@@ -412,7 +412,7 @@ img {
   }
 
   .header-logo-img {
-    max-height: 80px;
+    height: 70px; /* Виправлено з max-height */
   }
 
   .header-navigation {
