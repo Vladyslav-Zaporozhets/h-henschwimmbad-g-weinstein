@@ -7,7 +7,7 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
-      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      xintegrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -26,6 +26,9 @@
     <meta name="robots" content="index, follow" />
   </head>
   <body>
+    <!-- SVG sprite -->
+    <include src="./images/symbol-defs.svg"></include>
+
     <header class="header">
       <div class="container header-container">
         <a class="header-logo" href="index.html"
@@ -37,8 +40,6 @@
             "
             src="./images/höhenschwimmbad-logo@1x-min.png"
             alt="Logo Höhenschwimmbad"
-            width="200"
-            height="100"
         /></a>
         <nav class="header-navigation">
           <ul class="header-nav-list">
@@ -61,21 +62,36 @@
         </nav>
         <ul class="social-list header-social-list">
           <li class="social-list-item header-social-list-item">
-            <a href="" class="social-link header-social-link"
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              class="social-link header-social-link"
               ><svg class="social-link-ico" width="24" height="24">
                 <use href="./images/symbol-defs.svg#icon-facebook"></use>
               </svg>
             </a>
           </li>
           <li class="solial-list-item header-social-list-iem">
-            <a href="" class="social-link header-social-link"
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              class="social-link header-social-link"
               ><svg class="social-link-ico" width="24" height="24">
                 <use href="./images/symbol-defs.svg#icon-instagram"></use>
               </svg>
             </a>
           </li>
           <li class="solial-list-item header-social-list-iem">
-            <a href="" class="social-link header-social-link"
+            <a
+              href="https://twitter.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+              class="social-link header-social-link"
               ><svg class="social-link-ico" width="24" height="24">
                 <use href="./images/symbol-defs.svg#icon-twitter"></use>
               </svg>
@@ -86,6 +102,7 @@
           type="button"
           class="mobile-menu-btm"
           aria-controls="mobile-menu"
+          aria-expanded="false"
           data-menu-open
         >
           <svg class="mobile-menu-btm-ico" width="35" height="35">
@@ -93,29 +110,37 @@
           </svg>
         </button>
       </div>
-      <div class="mobile-menu" data-menu>
+      <div class="mobile-menu" data-menu id="mobile-menu">
         <div class="container mobile-menu-container">
           <button class="mob-close-btm" type="button" data-menu-close>
             <svg class="mob-close-btm-ico" width="10" height="10">
-              <use href="./images/symbol-defs.svg#icon-close-black"></use>
+              <use href="#icon-close-black"></use>
             </svg>
           </button>
           <nav class="mob-nav">
             <ul class="mob-nav-list">
               <li class="mob-nav-item">
-                <a href="#about" class="mob-nav-link">Über uns</a>
+                <a href="#about" class="mob-nav-link" data-menu-close
+                  >Über uns</a
+                >
               </li>
               <li class="mob-nav-item">
-                <a href="#hours-info" class="mob-nav-link">Öffnungszeiten</a>
+                <a href="#hours-info" class="mob-nav-link" data-menu-close
+                  >Öffnungszeiten</a
+                >
               </li>
               <li class="mob-nav-item">
-                <a href="#gallery" class="mob-nav-link">Galerie</a>
+                <a href="#gallery" class="mob-nav-link" data-menu-close
+                  >Galerie</a
+                >
               </li>
               <li class="mob-nav-item">
-                <a href="#contact" class="mob-nav-link">Kontakt</a>
+                <a href="#contact" class="mob-nav-link" data-menu-close
+                  >Kontakt</a
+                >
               </li>
               <li class="mob-nav-item">
-                <a href="#faq" class="mob-nav-link">FAQ</a>
+                <a href="#faq" class="mob-nav-link" data-menu-close>FAQ</a>
               </li>
             </ul>
           </nav>
@@ -142,7 +167,185 @@
           <h1 class="hero-title">Ihre Sommeroase mit Panoramablick</h1>
         </div>
       </section>
+
+      <!-- Section Über uns -->
+      <section id="about" class="section">
+        <div class="container">
+          <h2 class="section-title">Über uns</h2>
+          <p class="section-text">
+            Willkommen im Höhenschwimmbad Gößweinstein! Genießen Sie
+            unvergleichlichen Badespaß mit einem atemberaubenden Panoramablick
+            über die Fränkische Schweiz. Unser Naturbad bietet eine idyllische
+            Atmosphäre für die ganze Familie.
+          </p>
+          <p class="section-text">
+            Das Besondere: Der Eintritt ist frei! Unser Bad wird biologisch
+            gereinigt und kommt ganz ohne Chlor aus – für ein natürliches
+            Badeerlebnis. Bitte beachten Sie, dass das Baden auf eigene Gefahr
+            erfolgt, da keine Badeaufsicht vor Ort ist.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section Öffnungszeiten -->
+      <section id="hours-info" class="section section-gray">
+        <div class="container">
+          <h2 class="section-title">Öffnungszeiten & Infos</h2>
+          <ul class="info-list">
+            <li class="info-item">
+              <strong>Saison:</strong> Juni bis September
+            </li>
+            <li class="info-item">
+              <strong>Täglich:</strong> 09:00 - 20:00 Uhr
+            </li>
+            <li class="info-item"><strong>Eintritt:</strong> Kostenlos</li>
+            <li class="info-item">
+              <strong>Aufsicht:</strong> Baden auf eigene Gefahr (keine
+              Badeaufsicht)
+            </li>
+            <li class="info-item">
+              <strong>Wasser:</strong> Biologische Aufbereitung, chlorfrei
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section Galerie -->
+      <section id="gallery" class="section">
+        <div class="container">
+          <h2 class="section-title">Galerie</h2>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img
+                src="https://placehold.co/400x300/29a6a1/fff?text=Becken"
+                alt="Schwimmbecken"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://placehold.co/400x300/3683ae/fff?text=Panorama"
+                alt="Panoramablick"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://placehold.co/400x300/29a6a1/fff?text=Liegewiese"
+                alt="Liegewiese"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://placehold.co/400x300/3683ae/fff?text=Natur"
+                alt="Natur"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Kontakt -->
+      <section id="contact" class="section section-gray">
+        <div class="container contact-container">
+          <div class="contact-info">
+            <h2 class="section-title">Kontakt & Anfahrt</h2>
+            <address>
+              <ul class="contact-list">
+                <li class="contact-item">
+                  Schützenstraße 20<br />
+                  91327 Gößweinstein
+                </li>
+                <li class="contact-item">
+                  <strong>Telefon:</strong>
+                  <a href="tel:+49092429800">+49 (0)9242 9800</a>
+                </li>
+                <li class="contact-item">
+                  <strong>E-Mail:</strong>
+                  <a href="mailto:info@schwimmbad.com">info@schwimmbad.com</a>
+                </li>
+              </ul>
+            </address>
+          </div>
+          <div class="contact-form-wrapper">
+            <h3 class="form-title">Schreiben Sie uns</h3>
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Nachricht</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn-submit">Senden</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section FAQ -->
+      <section id="faq" class="section">
+        <div class="container">
+          <h2 class="section-title">FAQ - Häufige Fragen</h2>
+          <ul class="faq-list">
+            <li class="faq-item">
+              <h3 class="faq-question">Ist der Eintritt wirklich kostenlos?</h3>
+              <p class="faq-answer">
+                Ja, der Eintritt in das Höhenschwimmbad Gößweinstein ist für
+                alle Besucher kostenlos.
+              </p>
+            </li>
+            <li class="faq-item">
+              <h3 class="faq-question">Gibt es eine Badeaufsicht?</h3>
+              <p class="faq-answer">
+                Nein, es gibt keine Badeaufsicht. Das Baden und die Nutzung der
+                Anlage erfolgen auf eigene Gefahr. Eltern haften für ihre
+                Kinder.
+              </p>
+            </li>
+            <li class="faq-item">
+              <h3 class="faq-question">Sind Hunde im Bad erlaubt?</h3>
+              <p class="faq-answer">
+                Nein, aus hygienischen Gründen sind Hunde auf dem gesamten
+                Gelände (einschließlich Liegewiese) nicht gestattet.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; <span id="current-year"></span> Höhenschwimmbad Gößweinstein.
+          Alle Rechte vorbehalten.
+        </p>
+      </div>
+    </footer>
+    <!-- Скрипт для SVG (для старих браузерів) -->
+    <script>
+      (function (d, s) {
+        d.createElement(s);
+        var e = d.getElementsByTagName(s)[0];
+        var n = d.createElement(s);
+        n.async = true;
+        n.src = "https://cdn.jsdelivr.net/npm/svgxuse@1.2.6/svgxuse.min.js";
+        e.parentNode.insertBefore(n, e);
+      })(document, "script");
+    </script>
+    <!-- Скрипт для року у футері -->
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
     <script src="./js/menu.js"></script>
     <script src="./js/active-nav.js"></script>
   </body>
