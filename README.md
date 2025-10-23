@@ -1,6 +1,6 @@
 # Portfolio-Projekt: Promo-Website Höhenschwimmbad Gößweinstein
 
-![Vorschau der Höhenschwimmbad Gößweinstein Website]()
+![<img width="1920" height="953" alt="Image" src="https://github.com/user-attachments/assets/cabd5025-d6c2-4d2e-abeb-5cc311beb886" />]()
 
 Dies ist eine responsive Promotion-Website für das Höhenschwimmbad Gößweinstein, entwickelt als Portfolio-Projekt. Der Fokus lag auf der Erstellung einer sauberen, semantischen HTML-Struktur, modernem CSS-Layout (Flexbox, Grid) und der Implementierung dynamischer Funktionen mit **Vanilla JavaScript (ES6+)**.
 
