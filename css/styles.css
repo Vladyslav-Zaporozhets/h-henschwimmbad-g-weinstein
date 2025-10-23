@@ -512,7 +512,11 @@ img {
     flex-direction: row;
     gap: 40px;
   }
-  .contact-info,
+  .contact-info {
+    flex-basis: 50%;
+    display: flex; /* <-- Додати */
+    flex-direction: column; /* <-- Додати */
+  }
   .contact-form-wrapper {
     flex-basis: 50%;
   }
@@ -679,12 +683,15 @@ img {
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-grow: 1; /* <-- Додати (щоб він ріс) */
+  display: flex; /* <-- Додати (щоб керувати картою всередині) */
 }
 
 .google-map {
   width: 100%;
-  height: 350px;
+  flex-grow: 1; /* <-- Додати (карта сама заповнить простір) */
   border: none;
+  height: auto; /* <-- Додати (скинути фіксовану висоту) */
 }
 
 /* ===== WEATHER WIDGET STYLES ===== */
