@@ -5,19 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Höhenschwimmbad Gößweinstein</title>
     <link
-      rel="stylesheet"
+      rel="preload"
+      as="image"
+      href="./images/hero-img@1x-min.webp"
+      imagesrcset="./images/hero-img@1x-min.webp 1x, ./images/hero-img@2x-min.webp 2x"
+    />
+    <link
+      rel="preload"
+      as="style"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
       xintegrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      onload="this.rel='stylesheet'"
     />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
+      onload="this.rel='stylesheet'"
     />
-    <link rel="stylesheet" href="./css/styles.css" />
+
+    <link
+      rel="preload"
+      as="style"
+      href="./css/styles.css"
+      onload="this.rel='stylesheet'"
+    />
+
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+        xintegrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet"
+      />
+      <link rel="stylesheet" href="./css/styles.css" />
+    </noscript>
     <meta
       name="description"
       content="Naturbad Gößweinstein mit Panoramablick: kostenloser Eintritt, biologische Wasseraufbereitung, täglich geöffnet von Juni bis September &ndash; Baden auf eigene Gefahr."
@@ -70,6 +103,7 @@
               ><svg class="social-link-ico" width="24" height="24">
                 <use href="./images/symbol-defs.svg#icon-facebook"></use>
               </svg>
+              <span class="visually-hidden">Facebook</span>
             </a>
           </li>
           <li class="social-list-item header-social-list-item">
@@ -82,6 +116,7 @@
               ><svg class="social-link-ico" width="24" height="24">
                 <use href="./images/symbol-defs.svg#icon-instagram"></use>
               </svg>
+              <span class="visually-hidden">Instagram</span>
             </a>
           </li>
           <li class="social-list-item header-social-list-item">
@@ -94,6 +129,7 @@
               ><svg class="social-link-ico" width="24" height="24">
                 <use href="./images/symbol-defs.svg#icon-twitter"></use>
               </svg>
+              <span class="visually-hidden">Twitter</span>
             </a>
           </li>
         </ul>
@@ -392,11 +428,11 @@
       async
     ></script>
 
-    <script src="./js/menu.js"></script>
-    <script src="./js/active-nav.js"></script>
-    <script src="./js/current-year.js"></script>
-    <script src="./js/lightbox.js"></script>
-    <script src="./js/status-banner.js"></script>
-    <script src="./js/weather-widget.js"></script>
+    <script src="./js/menu.js" defer></script>
+    <script src="./js/active-nav.js" defer></script>
+    <script src="./js/current-year.js" defer></script>
+    <script src="./js/lightbox.js" defer></script>
+    <script src="./js/status-banner.js" defer></script>
+    <script src="./js/weather-widget.js" defer></script>
   </body>
 </html>

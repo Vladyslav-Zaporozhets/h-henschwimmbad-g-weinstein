@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://vladyslav-zaporozhets.github.io/h-henschwimmbad-g-weinstein/sitemap.xml

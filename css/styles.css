@@ -215,8 +215,8 @@ img {
       rgba(46, 47, 66, 0.5)
     ),
     image-set(
-      url(../images/hero-img@1x-min.jpg) 1x,
-      url(../images/hero-img@2x-min.jpg) 2x
+      url(../images/hero-img@1x-min.webp) 1x,
+      url(../images/hero-img@2x-min.webp) 2x
     );
   background-size: cover;
   background-repeat: no-repeat;
