@@ -25,5 +25,12 @@
     // Додамо керування ARIA-атрибутом
     const isMenuOpen = refs.modal.classList.contains("is-open");
     refs.openModalBtn.setAttribute("aria-expanded", isMenuOpen);
+
+    // Блокування/розблокування скролу
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
   }
 })();
